@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<p>{{ movies|length }} Titles</p>
+<ul class="movie-list">
+    {% for movie in movies %}
+    <li>
+        {{ movie.title }} - {{ movie.year }}
+        <span class="float-right">
+            <a class="vbd" href="http://v.baidu.com/v?word={{ movie.title }}&ct=301989888&rn=67&pn=0&db=0&s=0&fbl=800&ie=utf-8&oq=nnkd&f=3&rsp=0" target="_blank"
+                title="在IMDb中查找此电影">百度视频</a>
+        </span>
+    </li>
+    {% endfor %}
+</ul>
+
+<img class="hulu" src="{{ url_for('static',filename='images/5.jpg') }}" alt="">
+{% endblock %}
